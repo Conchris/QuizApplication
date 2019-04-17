@@ -17,16 +17,16 @@
 
   <h3>Quiz Application</h3>
 
-  <ol type="1">
+  <ol type="1" >
 
   <?php while($Qns=mysqli_fetch_array($result)){?>
     <hr>
 
-    <li id="question<?php echo $Qns['id']?>">
+    <li id="question<?php echo $Qns['id'] ?>">
 
       <?php echo $Qns['content']; ?>
 
-      <input type="hidden" name="questionId" id="questionId" value="<?php echo $Qns['id'] ?>">
+      <input type="hidden" name="questionId"  value="<?php echo $Qns['id'] ?>">
 
     <ol type="a">
 
@@ -43,8 +43,8 @@
        ?>
       <?php while($Ans=mysqli_fetch_array($reponse)){?>
 
-        <li>
-          <input id="ans" type="radio" name="question_<?php echo $Qns['id']?>" value="<?php echo $Ans['id']?>">
+        <li id="answer<?php echo $Ans['id']?>">
+          <input id="ans" type="radio"  name="question_<?php echo $Qns['id']?>" value="<?php echo $Ans['id']?>">
           <?php echo $Ans['content']; ?>
         </li>
 
@@ -55,7 +55,7 @@
 
     </li>
 
-  <?php } ?><hr>
+  <?php } ?>
   <input type="submit" name="submit" value="submit">
 
   </form>
