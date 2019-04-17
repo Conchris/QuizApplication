@@ -15,7 +15,7 @@
 
   $result=mysqli_query($conn,$sql);?>
 
-  <h3>Quiz Application</h3>
+  <h3 id="header">Quiz Application</h3>
 
   <ol type="1" >
 
@@ -55,8 +55,8 @@
 
     </li>
 
-  <?php } ?>
-  <input type="submit" name="submit" value="submit">
+  <?php } ?><hr>
+  <input type="submit" class="submit" name="submit" value="submit">
 
   </form>
 

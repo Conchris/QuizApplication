@@ -21,3 +21,16 @@ div.middleTable{
 #answer8,#answer9,#answer10,#answer11,#answer12,#answer13,#answer14,#answer15 {
   display: none;
 }
+#header{
+  font-family: fantasy;
+  text-align: center;
+  font-size: 24px;
+}
+.submit{
+  text-align: center;
+  position: absolute;
+  left: 49%;
+  bottom: 5px;
+  font-size: 20px;
+  border: 1px solid black;
+}
