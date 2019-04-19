@@ -6,10 +6,10 @@
 <script src="index.js"></script>
 
 <?php $conn=mysqli_connect("localhost","root","","quizapp"); ?>
-<body>
+<body >
 <div class="middleTable">
 
-  <form action="result.php" method="post">
+  <form action="result.php" method="post" name="myform" onsubmit="return dodi()">
 
   <?php $sql='select * from questions';
 
@@ -22,11 +22,11 @@
   <?php while($Qns=mysqli_fetch_array($result)){?>
     <hr>
 
-    <li id="question<?php echo $Qns['id'] ?>">
+    <li id="question<?php echo $Qns['id']; ?>">
 
       <?php echo $Qns['content']; ?>
 
-      <input type="hidden" name="questionId"  value="<?php echo $Qns['id'] ?>">
+      <input type="hidden" name="questionId" id="questionId" value="<?php echo $Qns['id'] ?>">
 
     <ol type="a">
 
@@ -44,7 +44,7 @@
       <?php while($Ans=mysqli_fetch_array($reponse)){?>
 
         <li id="answer<?php echo $Ans['id']?>">
-          <input id="ans" type="radio"  name="question_<?php echo $Qns['id']?>" value="<?php echo $Ans['id']?>">
+          <input  type="radio" id="question_<?php echo $Qns['id']?>"  name="question_<?php echo $Qns['id']?>" value="<?php echo $Ans['id']?>">
           <?php echo $Ans['content']; ?>
         </li>
 
