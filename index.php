@@ -2,16 +2,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>
 <html xmlns = "http://www.w3.org/1999/xhtml">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="main.css">
 <script src="index.js"></script>
-
-<?php $conn=mysqli_connect("localhost","root","","quizapp"); ?>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+<?php $conn=mysqli_connect("localhost","root","","quizapp");//connecting the database ?>
 <body >
+<!--placing the form in the middle of the page-->
 <div class="middleTable">
 
   <form action="result.php" method="post" name="myform" onsubmit="return dodi()">
 
-  <?php $sql='select * from questions';
+  <?php $sql='select * from questions';//selecting elements from the database table
 
   $result=mysqli_query($conn,$sql);?>
 
@@ -19,12 +23,12 @@
 
   <ol type="1" >
 
-  <?php while($Qns=mysqli_fetch_array($result)){?>
+  <?php while($Qns=mysqli_fetch_array($result)){//fetching from the questions table?>
     <hr>
 
-    <li id="question<?php echo $Qns['id']; ?>">
+    <li id="question<?php echo $Qns['id']; //getting numbers primary key id of the questions table?>">
 
-      <?php echo $Qns['content']; ?>
+      <?php echo $Qns['content'];//displaying question ?>
 
       <input type="hidden" name="questionId" id="questionId" value="<?php echo $Qns['id'] ?>">
 

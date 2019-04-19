@@ -26,6 +26,6 @@ if(isset($_POST['submit'])){
 <div class="middleTable">
   <h3>RESULT</h3>
   <hr>
-  <?php echo "<p><b> Your Total Score is <span>".$result."</span></b></p>"; ?>
+  <?php echo "<p><b> Your Total Score is <span>".$result."</span> out of 5</b></p>"; ?>
 </div>
 </html>
